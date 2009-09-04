@@ -1,4 +1,4 @@
-#summary nPanel: How it works and why.
+#summary nPanel: How it works and why
 #labels Featured
 = nPanel: How it works and why. =
 
