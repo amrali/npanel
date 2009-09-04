@@ -1,4 +1,5 @@
 #labels Featured
+#nPanel: How it works and why.
 = nPanel: How it works and why. =
 
 == Introduction ==
