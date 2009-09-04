@@ -1,0 +1,16 @@
+#summary nPanel: MHM
+#labels Featured,Phase-Implementation
+== Introduction ==
+
+  _MHM_ or Modules Handler Module is responsible for activating or deactivating the modules, the front-end will communicate to the back-end over the _FBCCM_ and _nPP_ modules to instruct the back-end _MHM_ to either activate or deactivate an install module.
+
+  Every module got its own signature in terms of its name, a version number, and a list of function signatures, so that to provide a sort of allowing multiple versions of the same module to be installed, however only one of the two version module will be loaded as it is hard to determine the effects of two versions of the same module being loaded and used side by side, as each module is free to implement how it works, so that by definition multiple modules of different versions could indeed be loaded and used side by side, however by allowing that, we put too much trust into the modules developer judgment and foresight, and risk the possibility of two or more module functionalities clashing with each other causing an undefined behavior or worse, crash.
+
+== Technical Details ==
+
+  There is a certain set of standard functions that should be implemented in a certain module, that is to provide the very basic yet needed information for the initialization phase for that module to finish successfully. Here is a complete listing of the standard functions prototypes that are required to be in any module ...
+
+  * _char `*` mname(void)_
+  * _char `*` mversion(void)_
+  * _char `**` mfsigs(void)_
+  * _char `**` mconfs(const char `**`)_
