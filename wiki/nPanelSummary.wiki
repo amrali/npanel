@@ -14,7 +14,7 @@
   nPanel consists mainly of a front-end and a back-end, the front-end is in the form of a php website, and the back-end is in the form of a Linux daemon, however there is a lot of modules which some belong to the front-end and some for the back-end. So in less words here we got the basic components that is included in nPanel...
 
   * Back-end
-    * MHM `[`Modules Handler Module`]`
+    * [nPanelMHM MHM] `[`Modules Handler Module`]`
     * FBCCM `[`Frontend/Backend Cryptographic Communications Module`]`
     * nPPM `[`nPanel Protocol Module`]`
     * nPCPM `[`nPanel Configuration Parsing Module`]`
