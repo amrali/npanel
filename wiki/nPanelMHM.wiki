@@ -20,4 +20,4 @@
 
   `char *mversion(void)` this function will provide version information, no need to provide module name in the returned string, only the blunt version number. (ex. 1.2.3)
 
-  `int mcmd(const char *, const char **, char **)` this is the interface for the back-end module, this function is used to send commands to the module (the first parameter) with parameters (the second parameter) and the output if any will be returned back (the third parameter).
+  `int mcmd(const char *, const char **, char **)` this is the interface for the back-end module, this function is used to send commands to the module (the first parameter) with parameters (the second parameter) and the output if any will be returned back (the third parameter). The return value of this function indicates the success or failure of this function call.
