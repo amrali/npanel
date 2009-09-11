@@ -2,7 +2,7 @@
 #labels Featured,Phase-Design
 == Introduction ==
 
-  _FBCCM_ or Frontend/Backend Cryptographic Communications Module is meant to establish a cryptographically secure connection to ensure the security of the communications held on a given session. This added security will give the project the immunity against the most harsh network attacks, as it will not allow capturing of the data nor tampering it, which by definition adds a lot of reliability to the whole project adding that you won't have to worry about the security of this system, as it ensures its own security.
+  _FBCCM_ or Frontend/Backend Cryptographic Communications Module is meant to establish a cryptographically secure connection to ensure the security of the communications held on a given session. This added security will give the project the immunity against the most harsh network attacks, as it will not allow eavesdropping on data nor tampering it, which by definition adds a lot of reliability to the whole project adding that you won't have to worry about the security of this system, as it ensures its own security.
 
 == Technical Details ==
 
