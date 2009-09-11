@@ -32,7 +32,7 @@
 }}}
 === Phase Beta ===
 
-  After the registration process being done, communications are considered safe and now to the data sent back and forth. The agreed upon salt is used to make a cryptographic hash of the data being sent which ensures data integrity.
+  After the registration process being done, communications are considered safe and now to the data sent back and forth. First the usual registration check is being done, and follow the encapsulation of the _[nPanelnPPM nPPM]_ protocol module data.
 
 *Backend sends host key to check for registration.*
 {{{
