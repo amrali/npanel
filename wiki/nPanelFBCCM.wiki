@@ -1,0 +1,48 @@
+#summary nPanel: FBCCM
+#labels Featured,Phase-Design
+== Introduction ==
+
+  _FBCCM_ or Frontend/Backend Cryptographic Communications Module is meant to establish a cryptographically secure connection to ensure the security of the communications held on a given session. This added security will give the project the immunity against the most harsh network attacks, as it will not allow capturing of the data nor tampering it, which by definition adds a lot of reliability to the whole project adding that you won't have to worry about the security of this system, as it ensures its own security.
+
+== Technical Details ==
+
+  _nPanel_ communication protocol(s) work mainly by encapsulation, so _FBCCM_ will encapsulate _nPPM_. Saying that, each protocol of communication will have its own structural design. So a typical _FBCCM_ session will look like this ...
+
+=== Phase Alpha ===
+
+  In this phase frontend(s) register backend(s), each backend shall have a unique key, much like the SSH2 RSA host key as an identification for it, in that phase, the backend sends its host key to the frontend to check if it got registered before or not, then the frontend and the backend exchange public keys to start securing the channel as early as possible,
+
+*Once a connection gets established to the backend, the backend sends its own HOST-KEY to the frontend to check if it got registered before.*
+{{{
+----------------------------------------------
+|                 HOST KEY                   |
+----------------------------------------------
+}}}
+*Frontend and Backend Exchanging RSA public keys, with encrypted challenges to confirm the integrity of the keys.*
+{{{
+----------------------------------------------
+| PUB-KEY |           CHALLENGE              |
+----------------------------------------------
+}}}
+*A response is sent back from the Frontend and the Backend for the sent challenges respectively for confirmation.*
+{{{
+----------------------------------------------
+|                RESPONSE                    |
+----------------------------------------------
+}}}
+=== Phase Beta ===
+
+  After the registration process being done, communications are considered safe and now to the data sent back and forth. The agreed upon salt is used to make a cryptographic hash of the data being sent which ensures data integrity.
+
+*Backend sends host key to check for registration.*
+{{{
+----------------------------------------------
+|                 HOST KEY                   |
+----------------------------------------------
+}}}
+*Frontend sends an encrypted ACK packet to confirm that the said backend is registered.*
+{{{
+----------------------------------------------
+|                   ACK                      |
+----------------------------------------------
+}}}
