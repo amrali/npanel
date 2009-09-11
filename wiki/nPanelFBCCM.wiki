@@ -6,7 +6,7 @@
 
 == Technical Details ==
 
-  _nPanel_ communication protocol(s) work mainly by encapsulation, so _FBCCM_ will encapsulate _nPPM_. Saying that, each protocol of communication will have its own structural design. So a typical _FBCCM_ session will look like this ...
+  _nPanel_ communication protocol(s) work mainly by encapsulation, so _FBCCM_ will encapsulate _[nPanelnPPM nPPM]_. Saying that, each protocol of communication will have its own structural design. So a typical _FBCCM_ session will look like this ...
 
 === Phase Alpha ===
 
