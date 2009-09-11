@@ -15,30 +15,30 @@
 
   * Back-end
     * [nPanelMHM MHM] `[`Modules Handler Module`]`
-    * FBCCM `[`Frontend/Backend Cryptographic Communications Module`]`
-    * nPPM `[`nPanel Protocol Module`]`
-    * nPCPM `[`nPanel Configuration Parsing Module`]`
-    * ATCM `[`Authentication and Traffic Control Module`]`
+    * [nPanelFBCCM FBCCM] `[`Frontend/Backend Cryptographic Communications Module`]`
+    * [nPanelnPPM nPPM] `[`nPanel Protocol Module`]`
+    * [nPanelnPCPM nPCPM] `[`nPanel Configuration Parsing Module`]`
+    * [nPanelATCM ATCM] `[`Authentication and Traffic Control Module`]`
 
   * Front-end
-    * MHM `[`Modules Handler Module`]`
-    * FBCCM `[`Frontend/Backend Cryptographic Communications Module`]`
-    * nPPM `[`nPanel Protocol Module`]`
-    * nPCPM `[`nPanel Configuration Parsing Module`]`
-    * ATCM `[`Authentication and Traffic Control Module`]`
+    * [nPanelMHM MHM] `[`Modules Handler Module`]`
+    * [nPanelFBCCM FBCCM] `[`Frontend/Backend Cryptographic Communications Module`]`
+    * [nPanelnPPM nPPM] `[`nPanel Protocol Module`]`
+    * [nPanelnPCPM nPCPM] `[`nPanel Configuration Parsing Module`]`
+    * [nPanelATCM ATCM] `[`Authentication and Traffic Control Module`]`
 
   As we can see each module in the back-end got its corresponding module in the front-end. Without the front-end module being installed the corresponding back-end module will remain inactive.
 
 == Modules ==
 
-  MHM is designed to handle the different modules that going to be installed, for the back-end it is going to work in terms of DLLs, there is absolutely no need to even restart the back-end daemon, all you would have to do is install the new module and the daemon will automatically detect the installed module and load it in memory. As for the front-end each module will have it's own folder inside the "modules" folder, the front-end core will also check for newly installed modules and automatically load them.
+  [nPanelMHM MHM] is designed to handle the different modules that going to be installed, for the back-end it is going to work in terms of DLLs, there is absolutely no need to even restart the back-end daemon, all you would have to do is install the new module and the daemon will automatically detect the installed module and load it in memory. As for the front-end each module will have it's own folder inside the "modules" folder, the front-end core will also check for newly installed modules and automatically load them.
 
-  FBCCM is the infrastructure security for the project, it will use RSA public key algorithm to fully encrypt the traffic between the front-end and the back-end, and that doesn't only apply to remote back-ends, it will even apply for the locally installed back-end, it is indeed an overhead but a needed overhead nonetheless in today's world of insecurity and misuse.
+  [nPanelFBCCM FBCCM] is the infrastructure security for the project, it will use RSA public key algorithm to fully encrypt the traffic between the front-end and the back-end, and that doesn't only apply to remote back-ends, it will even apply for the locally installed back-end, it is indeed an overhead but a needed overhead nonetheless in today's world of insecurity and misuse.
 
-  nPPM this module is responsible for the communication protocol and data transmission between the front-end(s) and the back-end(s), it is designed carefully to make it as hard as possible for any type of tampering (that's putting in mind that an attacker has successfully broken RSA) by means of using SHA256 checksum algorithm plus an agreed upon salt that is going to be exchanged in the first phase of back-end registration, so that an attacker has to mount a MITM attack at the moment the front-end registers the back-end. Of course all that has to be done with the assumption that an attacker we successful in breaking the underlining RSA encryption.
+  [nPanelnPPM nPPM] this module is responsible for the communication protocol and data transmission between the front-end(s) and the back-end(s), it is designed carefully to make it as hard as possible for any type of tampering (that's putting in mind that an attacker has successfully broken RSA) by means of using SHA256 checksum algorithm plus an agreed upon salt that is going to be exchanged in the first phase of back-end registration, so that an attacker has to mount a MITM attack at the moment the front-end registers the back-end. Of course all that has to be done with the assumption that an attacker we successful in breaking the underlining RSA encryption.
 
-  nPCPM This simply is the configuration parsing module, it is used to read the configurations needed before the back-end or front-end initialization phase.
+  [nPanelnPCPM nPCPM] This simply is the configuration parsing module, it is used to read the configurations needed before the back-end or front-end initialization phase.
 
-  ATCM This is an *OPTIONAL* module, we developed it as a demonstration of what could be done with such system, it is mainly used to authenticate and optionally shape the traffic for the network users, it doesn't really matter if it is a wireless or a wired network, it will work on any type of network, one exception is that all users must not be NAT'ed. It is like none of the similar solutions out there, it requires no program installation whatsoever, you will only have to authenticate once through the front-end module and allow ICMP protocol packets between the network users and the server.
+  [nPanelATCM ATCM] This is an *OPTIONAL* module, we developed it as a demonstration of what could be done with such system, it is mainly used to authenticate and optionally shape the traffic for the network users, it doesn't really matter if it is a wireless or a wired network, it will work on any type of network, one exception is that all users must not be NAT'ed. It is like none of the similar solutions out there, it requires no program installation whatsoever, you will only have to authenticate once through the front-end module and allow ICMP protocol packets between the network users and the server.
 
 ----
