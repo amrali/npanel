@@ -1,5 +1,5 @@
 #summary nPanel: MHM
-#labels Featured,Phase-Implementation
+#labels Featured,Phase-Design
 == Introduction ==
 
   _MHM_ or Modules Handler Module is responsible for activating or deactivating the modules, the front-end will communicate to the back-end over the _FBCCM_ and _nPPM_ modules to instruct the back-end _MHM_ to either activate or deactivate an installed module.
